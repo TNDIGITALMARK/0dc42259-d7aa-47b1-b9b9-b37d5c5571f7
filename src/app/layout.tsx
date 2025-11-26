@@ -49,38 +49,40 @@ export default function RootLayout({
       
         {}
       
+        {}
+      
         {/* PHOENIX_EDITOR_INJECTION_START */}
         {(process.env.NODE_ENV === 'development' ||
           process.env.NEXT_PUBLIC_ENABLE_PHOENIX_EDITOR === 'true') && (
           <>
-            <link rel="stylesheet" href="/phoenix-editor/helper.css?v=1764171883527" />
+            <link rel="stylesheet" href="/phoenix-editor/helper.css?v=1764171960671" />
             <script
-              src="/phoenix-editor/sourceMapTracker.js?v=1764171883527"
+              src="/phoenix-editor/sourceMapTracker.js?v=1764171960671"
               data-phoenix-sourcemap="true"
               defer
             />
             <script
-              src="/phoenix-editor/helper.js?v=1764171883527"
+              src="/phoenix-editor/helper.js?v=1764171960671"
               data-phoenix-enabled="true"
               defer
             />
             <script
-              src="/phoenix-editor/visualEditExtension.js?v=1764171883527"
+              src="/phoenix-editor/visualEditExtension.js?v=1764171960671"
               data-phoenix-visual-edit="true"
               defer
             />
             <script
-              src="/phoenix-editor/contextIntegration.js?v=1764171883527"
+              src="/phoenix-editor/contextIntegration.js?v=1764171960671"
               data-phoenix-context="true"
               defer
             />
             <script
-              src="/phoenix-editor/inlineTextEditor.js?v=1764171883527"
+              src="/phoenix-editor/inlineTextEditor.js?v=1764171960671"
               data-phoenix-text-edit="true"
               defer
             />
             <script
-              src="/phoenix-editor/inlineClassEditor.js?v=1764171883527"
+              src="/phoenix-editor/inlineClassEditor.js?v=1764171960671"
               data-phoenix-class-edit="true"
               defer
             />
