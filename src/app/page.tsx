@@ -29,9 +29,11 @@ export default function LandingPage() {
               <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
                 Pricing
               </a>
-              <a href="https://blog.example.com" className="text-sm font-medium hover:text-primary transition-colors">
-                Blog
-              </a>
+              <Link href="/blog">
+                <span className="text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  Blog
+                </span>
+              </Link>
             </div>
 
             <div className="flex items-center gap-3">
