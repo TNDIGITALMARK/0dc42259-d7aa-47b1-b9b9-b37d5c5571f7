@@ -179,6 +179,212 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section id="pricing" className="relative py-20 overflow-hidden">
+        {/* Soft gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/50 to-background" />
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="mb-4 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+              Choose Your Plan
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              Start free and upgrade anytime. All plans include core features with no hidden fees.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Free Plan */}
+            <Card className="shadow-lg border-2 border-border hover:border-primary/50 transition-all hover:shadow-2xl">
+              <CardHeader className="text-center pb-8">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-muted to-muted/50 mb-4 mx-auto">
+                  <Target className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Free</h3>
+                <div className="flex items-baseline justify-center gap-1 mb-2">
+                  <span className="text-4xl font-bold">$0</span>
+                  <span className="text-muted-foreground">/month</span>
+                </div>
+                <p className="text-sm text-muted-foreground">Perfect to get started</p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-success/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-success" />
+                    </div>
+                    <span className="text-sm">Basic workout tracking</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-success/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-success" />
+                    </div>
+                    <span className="text-sm">Meal planning templates</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-success/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-success" />
+                    </div>
+                    <span className="text-sm">Goal setting (up to 3)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-success/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-success" />
+                    </div>
+                    <span className="text-sm">Basic progress insights</span>
+                  </li>
+                </ul>
+                <Link href="/dashboard" className="block">
+                  <Button variant="outline" className="w-full rounded-md border-2 hover:bg-muted mt-6">
+                    Get Started Free
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Pro Plan - Featured */}
+            <Card className="shadow-2xl border-2 border-primary relative hover:shadow-primary/20 transition-all scale-105">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <div className="bg-gradient-to-r from-primary to-accent text-white px-6 py-1.5 rounded-full text-sm font-semibold shadow-lg">
+                  Most Popular
+                </div>
+              </div>
+              <CardHeader className="text-center pb-8 pt-8">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent mb-4 mx-auto shadow-lg">
+                  <Star className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  Pro
+                </h3>
+                <div className="flex items-baseline justify-center gap-1 mb-2">
+                  <span className="text-4xl font-bold">$9.99</span>
+                  <span className="text-muted-foreground">/month</span>
+                </div>
+                <p className="text-sm text-muted-foreground">For serious achievers</p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-primary" />
+                    </div>
+                    <span className="text-sm font-medium">Everything in Free</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-primary" />
+                    </div>
+                    <span className="text-sm">Unlimited goals & habits</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-primary" />
+                    </div>
+                    <span className="text-sm">Advanced analytics & insights</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-primary" />
+                    </div>
+                    <span className="text-sm">Custom workout programs</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-primary" />
+                    </div>
+                    <span className="text-sm">Personalized meal plans</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-primary" />
+                    </div>
+                    <span className="text-sm">Priority support</span>
+                  </li>
+                </ul>
+                <Link href="/dashboard" className="block">
+                  <Button className="w-full rounded-md shadow-lg bg-gradient-to-r from-primary to-accent hover:opacity-90 mt-6">
+                    Start Pro Trial
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Premium Plan */}
+            <Card className="shadow-lg border-2 border-accent/50 hover:border-accent transition-all hover:shadow-2xl">
+              <CardHeader className="text-center pb-8">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-accent/50 mb-4 mx-auto shadow-lg">
+                  <Dumbbell className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
+                  Premium
+                </h3>
+                <div className="flex items-baseline justify-center gap-1 mb-2">
+                  <span className="text-4xl font-bold">$19.99</span>
+                  <span className="text-muted-foreground">/month</span>
+                </div>
+                <p className="text-sm text-muted-foreground">Maximum transformation</p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-accent" />
+                    </div>
+                    <span className="text-sm font-medium">Everything in Pro</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-accent" />
+                    </div>
+                    <span className="text-sm">1-on-1 coaching sessions</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-accent" />
+                    </div>
+                    <span className="text-sm">AI-powered recommendations</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-accent" />
+                    </div>
+                    <span className="text-sm">Custom integration support</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-accent" />
+                    </div>
+                    <span className="text-sm">Exclusive community access</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                      <CheckSquare className="h-3 w-3 text-accent" />
+                    </div>
+                    <span className="text-sm">VIP support (24/7)</span>
+                  </li>
+                </ul>
+                <Link href="/dashboard" className="block">
+                  <Button variant="outline" className="w-full rounded-md border-2 border-accent hover:bg-accent/10 mt-6">
+                    Contact Sales
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* FAQ or Trust Indicators */}
+          <div className="mt-16 text-center">
+            <p className="text-sm text-muted-foreground mb-4">
+              🔒 30-day money-back guarantee • ✨ Cancel anytime • 💳 Secure payment processing
+            </p>
+            <p className="text-xs text-muted-foreground">
+              Trusted by over 50,000+ users worldwide
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonial Section */}
       <section id="testimonials" className="relative py-20 overflow-hidden">
         {/* Vibrant Rainbow Gradient Background */}
