@@ -7,67 +7,83 @@
    ================================================ */
 
 :root {
-  /* PRIMARY COLOR SYSTEM (from design reference #2196F3) */
-  --background: 0 0% 100%; /* #FFFFFF */
-  --foreground: 0 0% 10%; /* #1A1A1A */
+  /* VIBRANT COLOR SYSTEM - Colorful & Energetic */
+  --background: 250 100% 98%; /* Very light purple tint #F8F5FF */
+  --foreground: 270 40% 15%; /* Deep purple-black #1D0B33 */
 
-  /* CARDS - Clean white with shadows */
+  /* CARDS - Soft gradient backgrounds */
   --card: 0 0% 100%; /* #FFFFFF */
-  --card-foreground: 0 0% 10%; /* #1A1A1A */
+  --card-foreground: 270 40% 15%; /* #1D0B33 */
 
   /* POPOVERS */
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 10%;
+  --popover-foreground: 270 40% 15%;
 
-  /* PRIMARY BLUE - #2196F3 (H: 207, S: 90%, L: 54%) */
-  --primary: 207 90% 54%; /* Bright blue from design */
-  --primary-foreground: 0 0% 100%; /* White text on blue */
+  /* PRIMARY - Vibrant Purple #8B5CF6 */
+  --primary: 258 90% 66%; /* Vibrant purple */
+  --primary-foreground: 0 0% 100%; /* White text */
 
-  /* SECONDARY - Light blue background #E3F2FD */
-  --secondary: 207 89% 93%; /* Light blue backgrounds */
-  --secondary-foreground: 0 0% 10%;
+  /* SECONDARY - Bright Cyan #06B6D4 */
+  --secondary: 188 94% 43%; /* Bright cyan */
+  --secondary-foreground: 0 0% 100%;
 
-  /* MUTED - Gray tones for secondary text */
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 40%; /* #666666 */
+  /* MUTED - Soft purple backgrounds */
+  --muted: 250 60% 95%; /* Light purple #F3F0FF */
+  --muted-foreground: 270 20% 45%; /* Medium purple-gray */
 
-  /* ACCENT - Deep blue for hovers #1976D2 */
-  --accent: 207 79% 46%; /* Deep blue */
+  /* ACCENT - Hot Pink #EC4899 */
+  --accent: 330 81% 60%; /* Hot pink */
   --accent-foreground: 0 0% 100%;
 
-  /* SUCCESS GREEN - #4CAF50 */
-  --success: 122 39% 49%;
+  /* SUCCESS - Vibrant Green #10B981 */
+  --success: 158 64% 52%;
   --success-foreground: 0 0% 100%;
 
-  /* DESTRUCTIVE - Warning orange */
-  --destructive: 0 70% 50%;
+  /* DESTRUCTIVE - Bright Orange #F97316 */
+  --destructive: 25 95% 53%;
   --destructive-foreground: 0 0% 100%;
 
-  /* BORDERS - Subtle gray #E0E0E0 */
-  --border: 0 0% 88%; /* #E0E0E0 */
-  --input: 0 0% 88%;
-  --ring: 207 90% 54%; /* Blue ring for focus states */
+  /* BORDERS - Soft purple tint */
+  --border: 250 40% 88%; /* #E9E3F5 */
+  --input: 250 40% 88%;
+  --ring: 258 90% 66%; /* Purple ring */
 
-  /* BORDER RADIUS - from design reference */
-  --radius: 0.75rem; /* 12px for cards */
-  --radius-button: 0.375rem; /* 6px for buttons */
-  --radius-icon: 0.5rem; /* 8px for icon containers */
+  /* BORDER RADIUS */
+  --radius: 1rem; /* 16px - more modern */
+  --radius-button: 0.5rem; /* 8px */
+  --radius-icon: 0.75rem; /* 12px */
 
   /* SIDEBAR */
-  --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 10%;
-  --sidebar-primary: 207 90% 54%;
+  --sidebar-background: 270 40% 15%;
+  --sidebar-foreground: 0 0% 95%;
+  --sidebar-primary: 258 90% 66%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 207 89% 93%;
-  --sidebar-accent-foreground: 0 0% 10%;
-  --sidebar-border: 0 0% 88%;
-  --sidebar-ring: 207 90% 54%;
+  --sidebar-accent: 250 60% 25%;
+  --sidebar-accent-foreground: 0 0% 95%;
+  --sidebar-border: 250 30% 20%;
+  --sidebar-ring: 258 90% 66%;
 
-  /* CUSTOM DESIGN SYSTEM VARIABLES */
-  --text-secondary: 0 0% 40%; /* #666666 */
-  --text-muted: 0 0% 60%; /* #999999 */
-  --gradient-start: 207 79% 46%; /* #1976D2 */
-  --gradient-end: 207 90% 54%; /* #2196F3 */
+  /* VIBRANT DESIGN SYSTEM VARIABLES */
+  --text-secondary: 270 20% 45%; /* Medium purple-gray */
+  --text-muted: 270 15% 60%; /* Light purple-gray */
+
+  /* COLORFUL GRADIENTS */
+  --gradient-purple-start: 270 70% 50%; /* #7C3AED */
+  --gradient-purple-end: 258 90% 66%; /* #8B5CF6 */
+
+  --gradient-cyan-start: 188 94% 43%; /* #06B6D4 */
+  --gradient-cyan-end: 172 66% 50%; /* #14B8A6 */
+
+  --gradient-pink-start: 330 81% 60%; /* #EC4899 */
+  --gradient-pink-end: 340 82% 52%; /* #F43F5E */
+
+  --gradient-rainbow-1: 270 70% 50%; /* Purple */
+  --gradient-rainbow-2: 258 90% 66%; /* Lighter purple */
+  --gradient-rainbow-3: 188 94% 43%; /* Cyan */
+  --gradient-rainbow-4: 158 64% 52%; /* Green */
+  --gradient-rainbow-5: 45 93% 58%; /* Yellow */
+  --gradient-rainbow-6: 25 95% 53%; /* Orange */
+  --gradient-rainbow-7: 330 81% 60%; /* Pink */
 }
 
 .dark {
@@ -296,9 +312,45 @@ button:focus-visible {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* GRADIENT UTILITY */
+/* GRADIENT UTILITIES */
 .gradient-blue {
-  background: linear-gradient(135deg, hsl(var(--gradient-start)) 0%, hsl(var(--gradient-end)) 100%);
+  background: linear-gradient(135deg, hsl(var(--gradient-purple-start)) 0%, hsl(var(--gradient-purple-end)) 100%);
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, hsl(var(--gradient-purple-start)) 0%, hsl(var(--gradient-purple-end)) 100%);
+}
+
+.gradient-cyan {
+  background: linear-gradient(135deg, hsl(var(--gradient-cyan-start)) 0%, hsl(var(--gradient-cyan-end)) 100%);
+}
+
+.gradient-pink {
+  background: linear-gradient(135deg, hsl(var(--gradient-pink-start)) 0%, hsl(var(--gradient-pink-end)) 100%);
+}
+
+.gradient-rainbow {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--gradient-rainbow-1)) 0%,
+    hsl(var(--gradient-rainbow-2)) 14%,
+    hsl(var(--gradient-rainbow-3)) 28%,
+    hsl(var(--gradient-rainbow-4)) 42%,
+    hsl(var(--gradient-rainbow-5)) 56%,
+    hsl(var(--gradient-rainbow-6)) 70%,
+    hsl(var(--gradient-rainbow-7)) 100%
+  );
+}
+
+.gradient-mesh {
+  background:
+    radial-gradient(at 40% 20%, hsl(var(--gradient-rainbow-1)) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsl(var(--gradient-rainbow-3)) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsl(var(--gradient-rainbow-5)) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, hsl(var(--gradient-rainbow-7)) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsl(var(--gradient-rainbow-2)) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsl(var(--gradient-rainbow-4)) 0px, transparent 50%),
+    hsl(var(--background));
 }
 
 /* RESPONSIVE TYPOGRAPHY */
