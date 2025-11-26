@@ -19,9 +19,18 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { BottomNav } from '@/components/bottom-nav';
+import { AuthGuard } from '@/components/auth-guard';
 import Link from 'next/link';
 
 export default function WorkoutsPage() {
+  return (
+    <AuthGuard>
+      <WorkoutsContent />
+    </AuthGuard>
+  );
+}
+
+function WorkoutsContent() {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   // Mock data - in real app, this would come from Supabase
@@ -356,3 +365,4 @@ export default function WorkoutsPage() {
     </div>
   );
 }
+

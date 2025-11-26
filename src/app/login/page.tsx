@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/lib/zylo/hooks';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -26,12 +26,22 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
  */
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const auth = useAuth();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [redirectUrl, setRedirectUrl] = useState('/dashboard');
+
+  // Get redirect URL from query params
+  useEffect(() => {
+    const redirect = searchParams.get('redirect');
+    if (redirect) {
+      setRedirectUrl(redirect);
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,8 +50,8 @@ export default function LoginPage() {
 
     try {
       await auth.login(email, password);
-      // Redirect to home on success - customize this as needed
-      router.push('/');
+      // Redirect to specified URL or dashboard
+      router.push(redirectUrl);
     } catch (err: any) {
       setError(err.message || 'Login failed. Please check your credentials.');
     } finally {

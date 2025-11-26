@@ -6,8 +6,17 @@ import { Badge } from '@/components/ui/badge';
 import { lifeGoals } from '@/lib/mock-data';
 import { Progress } from '@/components/ui/progress';
 import { BottomNav } from '@/components/bottom-nav';
+import { AuthGuard } from '@/components/auth-guard';
 
 export default function ProgressPage() {
+  return (
+    <AuthGuard>
+      <ProgressContent />
+    </AuthGuard>
+  );
+}
+
+function ProgressContent() {
   const completedMilestones = lifeGoals.reduce((sum, goal) =>
     sum + goal.milestones.filter(m => m.completed).length, 0
   );
@@ -284,3 +293,4 @@ export default function ProgressPage() {
     </div>
   );
 }
+

@@ -9,6 +9,7 @@ import { Progress } from '@/components/ui/progress';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { BottomNav } from '@/components/bottom-nav';
+import { AuthGuard } from '@/components/auth-guard';
 import {
   healthyRecipes,
   todaysMealLogs,
@@ -20,6 +21,14 @@ import {
 } from '@/lib/mock-data';
 
 export default function NutritionPage() {
+  return (
+    <AuthGuard>
+      <NutritionContent />
+    </AuthGuard>
+  );
+}
+
+function NutritionContent() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedDietType, setSelectedDietType] = useState<string>('all');
@@ -579,3 +588,4 @@ export default function NutritionPage() {
     </div>
   );
 }
+

@@ -7,8 +7,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { weeklyWorkouts, weeklyMeals, lifeGoals } from '@/lib/mock-data';
 import { BottomNav } from '@/components/bottom-nav';
+import { AuthGuard } from '@/components/auth-guard';
 
 export default function PlanningPage() {
+  return (
+    <AuthGuard>
+      <PlanningContent />
+    </AuthGuard>
+  );
+}
+
+function PlanningContent() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -257,3 +266,4 @@ export default function PlanningPage() {
     </div>
   );
 }
+

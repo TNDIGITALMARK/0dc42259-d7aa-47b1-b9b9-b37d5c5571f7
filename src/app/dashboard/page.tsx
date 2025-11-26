@@ -8,9 +8,18 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { weeklyWorkouts, weeklyMeals, lifeGoals, todaySummary } from '@/lib/mock-data';
 import { BottomNav } from '@/components/bottom-nav';
+import { AuthGuard } from '@/components/auth-guard';
 import { useState } from 'react';
 
 export default function DashboardPage() {
+  return (
+    <AuthGuard>
+      <DashboardContent />
+    </AuthGuard>
+  );
+}
+
+function DashboardContent() {
   const [completedWorkouts, setCompletedWorkouts] = useState<Set<string>>(new Set());
   const todaysWorkout = weeklyWorkouts.find(w => w.date === todaySummary.date);
 
@@ -368,3 +377,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+
