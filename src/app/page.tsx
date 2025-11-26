@@ -29,6 +29,16 @@ export default function LandingPage() {
               <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
                 Pricing
               </a>
+              <Link href="/pricing-breakdown">
+                <span className="text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  Revenue Breakdown
+                </span>
+              </Link>
+              <Link href="/revenue-calculator">
+                <span className="text-sm font-medium hover:text-primary transition-colors cursor-pointer">
+                  Calculator
+                </span>
+              </Link>
               <Link href="/blog">
                 <span className="text-sm font-medium hover:text-primary transition-colors cursor-pointer">
                   Blog
@@ -536,9 +546,33 @@ export default function LandingPage() {
                 <span className="text-sm font-medium">Secure payment processing</span>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground mb-6">
               Trusted by over 50,000+ users worldwide • 98% satisfaction rate
             </p>
+
+            {/* Transparent Pricing Resources */}
+            <Card className="max-w-3xl mx-auto mt-8 shadow-xl border-2 border-primary/20">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  💡 Curious where your subscription money goes?
+                </h3>
+                <p className="text-sm text-muted-foreground mb-6">
+                  We believe in complete transparency. Explore our detailed revenue breakdown and use our interactive calculator to understand exactly how we invest your subscription to deliver exceptional value.
+                </p>
+                <div className="flex flex-wrap gap-3 justify-center">
+                  <Link href="/pricing-breakdown">
+                    <Button variant="outline" className="border-2 border-primary hover:bg-primary/10">
+                      📊 View Revenue Breakdown
+                    </Button>
+                  </Link>
+                  <Link href="/revenue-calculator">
+                    <Button variant="outline" className="border-2 border-accent hover:bg-accent/10">
+                      🧮 Try Revenue Calculator
+                    </Button>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
