@@ -146,7 +146,7 @@ Ready to build habits that transform your life? LifePlan Pro's habit tracking sy
   },
   {
     id: '3',
-    title: 'Meal Prep Made Easy: A Beginner's Complete Guide',
+    title: 'Meal Prep Made Easy: A Beginner\'s Complete Guide',
     slug: 'meal-prep-beginners-complete-guide',
     excerpt: 'Master the art of meal prepping with this step-by-step guide. Save time, eat healthier, and reduce food waste.',
     content: `
