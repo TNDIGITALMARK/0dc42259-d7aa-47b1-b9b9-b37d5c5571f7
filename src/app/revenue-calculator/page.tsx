@@ -462,7 +462,7 @@ export default function RevenueCalculatorPage() {
                     {((((revenue.monthly.total / (proUsers + premiumUsers)) * 18) / ((revenue.allocations.marketing / (proUsers + premiumUsers)) * 12)) || 0).toFixed(2)}:1
                   </div>
                   <p className="text-xs text-muted-foreground">
-                    Target: >3:1 for healthy growth
+                    Target: {'>'}3:1 for healthy growth
                   </p>
                 </div>
               </CardContent>
