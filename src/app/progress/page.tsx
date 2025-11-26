@@ -58,49 +58,75 @@ export default function ProgressPage() {
           <p className="text-secondary text-lg">Track your achievements and celebrate your journey</p>
         </div>
 
-        {/* Stats Overview */}
+        {/* Stats Overview - Enhanced */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <Card className="shadow-card">
+          <Card className="shadow-card border-2 border-orange-200 hover:border-orange-500 hover:shadow-lg transition-all group">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium">Current Streak</CardTitle>
-              <Flame className="h-5 w-5 text-orange-500" />
+              <div className="h-10 w-10 rounded-lg bg-orange-100 group-hover:bg-orange-200 flex items-center justify-center transition-colors">
+                <Flame className="h-5 w-5 text-orange-500" />
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold">{currentStreak}</div>
-              <p className="text-xs text-muted-foreground mt-1">days in a row</p>
+              <div className="text-4xl font-bold text-orange-500 mb-1">{currentStreak}</div>
+              <p className="text-xs text-muted-foreground">days in a row 🔥</p>
+              <Progress value={(currentStreak / longestStreak) * 100} className="mt-3 h-1" />
             </CardContent>
           </Card>
 
-          <Card className="shadow-card">
+          <Card className="shadow-card border-2 border-primary/20 hover:border-primary hover:shadow-lg transition-all group">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium">Longest Streak</CardTitle>
-              <Award className="h-5 w-5 text-primary" />
+              <div className="h-10 w-10 rounded-lg bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
+                <Award className="h-5 w-5 text-primary" />
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold">{longestStreak}</div>
-              <p className="text-xs text-muted-foreground mt-1">days record</p>
+              <div className="text-4xl font-bold text-primary mb-1">{longestStreak}</div>
+              <p className="text-xs text-muted-foreground">days record 🏆</p>
+              <div className="mt-3">
+                <Badge variant="outline" className="text-xs">Personal Best</Badge>
+              </div>
             </CardContent>
           </Card>
 
-          <Card className="shadow-card">
+          <Card className="shadow-card border-2 border-secondary/20 hover:border-secondary hover:shadow-lg transition-all group">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium">Milestones</CardTitle>
-              <Target className="h-5 w-5 text-primary" />
+              <div className="h-10 w-10 rounded-lg bg-secondary/10 group-hover:bg-secondary/20 flex items-center justify-center transition-colors">
+                <Target className="h-5 w-5 text-secondary" />
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold">{completedMilestones}/{totalMilestones}</div>
-              <p className="text-xs text-muted-foreground mt-1">completed</p>
+              <div className="text-4xl font-bold text-secondary mb-1">
+                {completedMilestones}<span className="text-2xl text-muted-foreground">/{totalMilestones}</span>
+              </div>
+              <p className="text-xs text-muted-foreground">completed</p>
+              <Progress value={(completedMilestones / totalMilestones) * 100} className="mt-3 h-1" />
             </CardContent>
           </Card>
 
-          <Card className="shadow-card">
+          <Card className="shadow-card border-2 border-success/20 hover:border-success hover:shadow-lg transition-all group">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium">Avg Progress</CardTitle>
-              <TrendingUp className="h-5 w-5 text-success" />
+              <div className="h-10 w-10 rounded-lg bg-success/10 group-hover:bg-success/20 flex items-center justify-center transition-colors">
+                <TrendingUp className="h-5 w-5 text-success" />
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold">{avgProgress}%</div>
-              <p className="text-xs text-muted-foreground mt-1">across all goals</p>
+              <div className="text-4xl font-bold bg-gradient-to-r from-success to-primary bg-clip-text text-transparent mb-1">
+                {avgProgress}%
+              </div>
+              <p className="text-xs text-muted-foreground">across all goals</p>
+              <div className="mt-3">
+                {avgProgress >= 75 ? (
+                  <Badge className="bg-success text-xs">Excellent!</Badge>
+                ) : avgProgress >= 50 ? (
+                  <Badge variant="secondary" className="text-xs">Good Progress</Badge>
+                ) : (
+                  <Badge variant="outline" className="text-xs">Keep Going!</Badge>
+                )}
+              </div>
             </CardContent>
           </Card>
         </div>

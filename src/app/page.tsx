@@ -104,19 +104,19 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-muted via-background to-muted" />
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Features Designed For You</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Everything you need to transform your life in one beautiful, intuitive app
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             {/* Workout Feature */}
-            <Card className="shadow-lg text-center border-2 border-primary/20 hover:border-primary transition-all hover:shadow-2xl overflow-hidden group">
-              <CardHeader className="flex flex-col items-center relative">
+            <Card className="shadow-lg text-center border-2 border-primary/20 hover:border-primary transition-all hover:shadow-2xl hover:-translate-y-2 overflow-hidden group cursor-pointer">
+              <CardHeader className="flex flex-col items-center relative pb-4">
                 <div className="absolute inset-0 gradient-purple opacity-10 group-hover:opacity-20 transition-opacity" />
-                <div className="relative mb-4 rounded-2xl overflow-hidden shadow-md">
+                <div className="relative mb-4 rounded-2xl overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
                   <img
                     src="/generated/fitness-feature.png"
                     alt="Workout & Fitness"
@@ -126,19 +126,33 @@ export default function LandingPage() {
                 <h3 className="text-xl font-semibold">Workout & Fitness</h3>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground mb-4">
                   Plan workout routines, progress tracking
                   <br />
                   & exercise integration
                 </p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center gap-2 text-left">
+                    <CheckSquare className="h-4 w-4 text-primary" />
+                    <span>Custom workout programs</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-left">
+                    <CheckSquare className="h-4 w-4 text-primary" />
+                    <span>Progress tracking & analytics</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-left">
+                    <CheckSquare className="h-4 w-4 text-primary" />
+                    <span>Exercise library & guides</span>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
             {/* Nutrition Feature */}
-            <Card className="shadow-lg text-center border-2 border-secondary/20 hover:border-secondary transition-all hover:shadow-2xl overflow-hidden group">
-              <CardHeader className="flex flex-col items-center relative">
+            <Card className="shadow-lg text-center border-2 border-secondary/20 hover:border-secondary transition-all hover:shadow-2xl hover:-translate-y-2 overflow-hidden group cursor-pointer">
+              <CardHeader className="flex flex-col items-center relative pb-4">
                 <div className="absolute inset-0 gradient-cyan opacity-10 group-hover:opacity-20 transition-opacity" />
-                <div className="relative mb-4 rounded-2xl overflow-hidden shadow-md">
+                <div className="relative mb-4 rounded-2xl overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
                   <img
                     src="/generated/nutrition-feature.png"
                     alt="Nutrition & Meal Prep"
@@ -148,19 +162,33 @@ export default function LandingPage() {
                 <h3 className="text-xl font-semibold">Nutrition & Meal Prep</h3>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground mb-4">
                   Healthy recipes, calorie tracking
                   <br />
                   & diet insights
                 </p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center gap-2 text-left">
+                    <CheckSquare className="h-4 w-4 text-secondary" />
+                    <span>200+ healthy recipes</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-left">
+                    <CheckSquare className="h-4 w-4 text-secondary" />
+                    <span>Smart calorie tracking</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-left">
+                    <CheckSquare className="h-4 w-4 text-secondary" />
+                    <span>Personalized meal plans</span>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
             {/* Goals Feature */}
-            <Card className="shadow-lg text-center border-2 border-accent/20 hover:border-accent transition-all hover:shadow-2xl overflow-hidden group">
-              <CardHeader className="flex flex-col items-center relative">
+            <Card className="shadow-lg text-center border-2 border-accent/20 hover:border-accent transition-all hover:shadow-2xl hover:-translate-y-2 overflow-hidden group cursor-pointer">
+              <CardHeader className="flex flex-col items-center relative pb-4">
                 <div className="absolute inset-0 gradient-pink opacity-10 group-hover:opacity-20 transition-opacity" />
-                <div className="relative mb-4 rounded-2xl overflow-hidden shadow-md">
+                <div className="relative mb-4 rounded-2xl overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
                   <img
                     src="/generated/goals-feature.png"
                     alt="Goals & Habits"
@@ -170,13 +198,55 @@ export default function LandingPage() {
                 <h3 className="text-xl font-semibold">Goals & Habits</h3>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground mb-4">
                   Set milestones, track your habits
                   <br />
                   & visualize success
                 </p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center gap-2 text-left">
+                    <CheckSquare className="h-4 w-4 text-accent" />
+                    <span>Unlimited goal setting</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-left">
+                    <CheckSquare className="h-4 w-4 text-accent" />
+                    <span>Habit streak tracking</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-left">
+                    <CheckSquare className="h-4 w-4 text-accent" />
+                    <span>Visual progress charts</span>
+                  </div>
+                </div>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Feature Statistics */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
+                50K+
+              </div>
+              <div className="text-sm text-muted-foreground">Active Users</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent mb-2">
+                1M+
+              </div>
+              <div className="text-sm text-muted-foreground">Workouts Tracked</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent mb-2">
+                4.9★
+              </div>
+              <div className="text-sm text-muted-foreground">App Store Rating</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
+                98%
+              </div>
+              <div className="text-sm text-muted-foreground">User Satisfaction</div>
+            </div>
           </div>
         </div>
       </section>
@@ -375,13 +445,99 @@ export default function LandingPage() {
             </Card>
           </div>
 
+          {/* Comparison Table */}
+          <div className="mt-20">
+            <h3 className="text-2xl font-bold text-center mb-8">Compare Plans</h3>
+            <Card className="shadow-2xl overflow-hidden max-w-5xl mx-auto">
+              <CardContent className="p-0">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-border">
+                        <th className="text-left p-4 font-semibold">Features</th>
+                        <th className="text-center p-4 font-semibold">Free</th>
+                        <th className="text-center p-4 font-semibold bg-primary/5">Pro</th>
+                        <th className="text-center p-4 font-semibold">Premium</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-sm">
+                      <tr className="border-b border-border">
+                        <td className="p-4">Workout Tracking</td>
+                        <td className="text-center p-4">
+                          <CheckSquare className="h-5 w-5 text-success mx-auto" />
+                        </td>
+                        <td className="text-center p-4 bg-primary/5">
+                          <CheckSquare className="h-5 w-5 text-success mx-auto" />
+                        </td>
+                        <td className="text-center p-4">
+                          <CheckSquare className="h-5 w-5 text-success mx-auto" />
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-4">Meal Planning</td>
+                        <td className="text-center p-4 text-muted-foreground">Basic</td>
+                        <td className="text-center p-4 bg-primary/5 font-medium">Advanced</td>
+                        <td className="text-center p-4 font-medium">Custom</td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-4">Goals & Habits</td>
+                        <td className="text-center p-4 text-muted-foreground">Up to 3</td>
+                        <td className="text-center p-4 bg-primary/5 font-medium">Unlimited</td>
+                        <td className="text-center p-4 font-medium">Unlimited</td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-4">Analytics & Insights</td>
+                        <td className="text-center p-4 text-muted-foreground">Basic</td>
+                        <td className="text-center p-4 bg-primary/5 font-medium">Advanced</td>
+                        <td className="text-center p-4 font-medium">AI-Powered</td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-4">1-on-1 Coaching</td>
+                        <td className="text-center p-4 text-muted-foreground">-</td>
+                        <td className="text-center p-4 bg-primary/5 text-muted-foreground">-</td>
+                        <td className="text-center p-4">
+                          <CheckSquare className="h-5 w-5 text-success mx-auto" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="p-4">Priority Support</td>
+                        <td className="text-center p-4 text-muted-foreground">-</td>
+                        <td className="text-center p-4 bg-primary/5">
+                          <CheckSquare className="h-5 w-5 text-success mx-auto" />
+                        </td>
+                        <td className="text-center p-4 font-medium">24/7 VIP</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
           {/* FAQ or Trust Indicators */}
           <div className="mt-16 text-center">
-            <p className="text-sm text-muted-foreground mb-4">
-              🔒 30-day money-back guarantee • ✨ Cancel anytime • 💳 Secure payment processing
-            </p>
-            <p className="text-xs text-muted-foreground">
-              Trusted by over 50,000+ users worldwide
+            <div className="flex flex-wrap items-center justify-center gap-6 mb-6">
+              <div className="flex items-center gap-2">
+                <div className="h-10 w-10 rounded-full bg-success/20 flex items-center justify-center">
+                  <CheckSquare className="h-5 w-5 text-success" />
+                </div>
+                <span className="text-sm font-medium">30-day money-back guarantee</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                  <Star className="h-5 w-5 text-primary" />
+                </div>
+                <span className="text-sm font-medium">Cancel anytime</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="h-10 w-10 rounded-full bg-secondary/20 flex items-center justify-center">
+                  <Target className="h-5 w-5 text-secondary" />
+                </div>
+                <span className="text-sm font-medium">Secure payment processing</span>
+              </div>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Trusted by over 50,000+ users worldwide • 98% satisfaction rate
             </p>
           </div>
         </div>
@@ -394,42 +550,95 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20" />
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-white mb-6 drop-shadow-lg">Take Control of Your Life</h2>
-              <p className="text-white/95 text-lg mb-8 drop-shadow">
-                Join thousands of users who have transformed their lives
-                with LifePlan Pro. Start your journey today.
-              </p>
-              <Link href="/dashboard">
-                <Button size="lg" className="rounded-md text-base px-8 bg-white text-primary hover:bg-white/90 shadow-xl">
-                  Download Now
-                </Button>
-              </Link>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-white mb-4 drop-shadow-lg">What Our Users Say</h2>
+            <p className="text-white/95 text-lg drop-shadow">
+              Join thousands who have transformed their lives with LifePlan Pro
+            </p>
+          </div>
 
-            <Card className="shadow-2xl bg-white border-0">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="h-16 w-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-lg font-bold text-white shadow-lg">
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Card className="shadow-2xl bg-white border-0 hover:scale-105 transition-transform">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-sm font-bold text-white shadow-lg">
                     JD
                   </div>
                   <div>
-                    <p className="font-semibold text-lg">Jane D</p>
-                    <div className="flex gap-1 mt-1">
+                    <p className="font-semibold">Jane D</p>
+                    <div className="flex gap-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                        <Star key={i} className="h-3 w-3 fill-accent text-accent" />
                       ))}
                     </div>
                   </div>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   "LifePlan Pro has been a game-changer for my lifestyle. I was struggling
-                  with staying consistent, meal prepping, and juggling multiple goals. This app brought
-                  everything together in one place!"
+                  with staying consistent, meal prepping, and juggling multiple goals."
                 </p>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <p className="text-xs text-muted-foreground">Lost 15lbs in 3 months</p>
+                </div>
               </CardContent>
             </Card>
+
+            <Card className="shadow-2xl bg-white border-0 hover:scale-105 transition-transform">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-sm font-bold text-white shadow-lg">
+                    MK
+                  </div>
+                  <div>
+                    <p className="font-semibold">Mike K</p>
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3 w-3 fill-accent text-accent" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  "As a busy professional, I needed something to keep me organized. The workout and meal tracking features are incredible!"
+                </p>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <p className="text-xs text-muted-foreground">45-day workout streak</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-2xl bg-white border-0 hover:scale-105 transition-transform">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center text-sm font-bold text-white shadow-lg">
+                    SC
+                  </div>
+                  <div>
+                    <p className="font-semibold">Sarah C</p>
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3 w-3 fill-accent text-accent" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  "The goal tracking feature keeps me motivated every day. I've achieved more in 6 months than I did in the past 2 years!"
+                </p>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <p className="text-xs text-muted-foreground">Completed 12 major goals</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Link href="/dashboard">
+              <Button size="lg" className="rounded-md text-base px-8 bg-white text-primary hover:bg-white/90 shadow-xl">
+                Start Your Transformation
+                <ArrowRight className="h-5 w-5 ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

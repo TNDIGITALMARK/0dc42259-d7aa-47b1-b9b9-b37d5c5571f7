@@ -54,55 +54,153 @@ export default function DashboardPage() {
       </header>
 
       <main className="container mx-auto px-6 py-8 pb-24 md:pb-8">
-        {/* Welcome Section */}
+        {/* Welcome Section with Quick Stats */}
         <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-2">Welcome back, Sarah!</h2>
-          <p className="text-secondary text-lg">Here's your progress for today</p>
+          <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
+            <div>
+              <h2 className="text-3xl font-bold mb-2">Welcome back, Sarah!</h2>
+              <p className="text-muted-foreground text-lg">Here's your progress for today</p>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="text-center">
+                <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  Day 47
+                </div>
+                <div className="text-xs text-muted-foreground">Current Streak</div>
+              </div>
+              <div className="h-12 w-px bg-border" />
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">Level 8</div>
+                <div className="text-xs text-muted-foreground">Achievement</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Weekly Overview Mini Chart */}
+          <Card className="shadow-card border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5">
+            <CardContent className="p-4">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="font-semibold">This Week's Activity</h3>
+                <Badge className="bg-gradient-to-r from-primary to-accent">
+                  <TrendingUp className="h-3 w-3 mr-1" />
+                  +12% vs last week
+                </Badge>
+              </div>
+              <div className="grid grid-cols-7 gap-2">
+                {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day, index) => {
+                  const progress = [85, 92, 78, 95, 88, 0, 0][index];
+                  const isToday = index === 4;
+                  return (
+                    <div key={day} className="text-center">
+                      <div className="text-xs text-muted-foreground mb-2">{day}</div>
+                      <div className="h-24 bg-muted rounded-lg overflow-hidden relative">
+                        <div
+                          className={`absolute bottom-0 left-0 right-0 ${
+                            isToday
+                              ? 'bg-gradient-to-t from-primary to-accent'
+                              : 'bg-gradient-to-t from-primary/40 to-accent/40'
+                          } transition-all`}
+                          style={{ height: `${progress}%` }}
+                        />
+                        {progress > 0 && (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-xs font-bold text-white drop-shadow">
+                              {progress}%
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
-        {/* Daily Summary Cards */}
+        {/* Daily Summary Cards - Enhanced */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card className="shadow-card">
+          <Card className="shadow-card border-2 border-primary/20 hover:border-primary hover:shadow-lg transition-all group">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-base font-medium">Workout Progress</CardTitle>
-              <Dumbbell className="h-5 w-5 text-primary" />
+              <div className="h-10 w-10 rounded-lg bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
+                <Dumbbell className="h-5 w-5 text-primary" />
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold mb-2">{completedCount}/{todaySummary.workoutsTotal}</div>
-              <Progress value={workoutProgress} className="mb-2" />
-              <p className="text-sm text-muted-foreground">
-                {todaysWorkout ? todaysWorkout.type : 'No workout today'}
-              </p>
+              <div className="flex items-baseline gap-2 mb-3">
+                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  {completedCount}
+                </div>
+                <div className="text-muted-foreground">/ {todaySummary.workoutsTotal} completed</div>
+              </div>
+              <Progress value={workoutProgress} className="mb-3 h-2" />
+              <div className="flex items-center justify-between text-sm">
+                <p className="text-muted-foreground">
+                  {todaysWorkout ? todaysWorkout.type : 'No workout today'}
+                </p>
+                {workoutProgress === 100 && (
+                  <Badge className="bg-success">
+                    <Award className="h-3 w-3 mr-1" />
+                    Done!
+                  </Badge>
+                )}
+              </div>
             </CardContent>
           </Card>
 
-          <Card className="shadow-card">
+          <Card className="shadow-card border-2 border-secondary/20 hover:border-secondary hover:shadow-lg transition-all group">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-base font-medium">Nutrition</CardTitle>
-              <Apple className="h-5 w-5 text-primary" />
+              <div className="h-10 w-10 rounded-lg bg-secondary/10 group-hover:bg-secondary/20 flex items-center justify-center transition-colors">
+                <Apple className="h-5 w-5 text-secondary" />
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold mb-2">
-                {todaySummary.caloriesConsumed}/{todaySummary.caloriesTarget}
+              <div className="flex items-baseline gap-2 mb-3">
+                <div className="text-3xl font-bold text-secondary">
+                  {todaySummary.caloriesConsumed}
+                </div>
+                <div className="text-muted-foreground">/ {todaySummary.caloriesTarget} cal</div>
               </div>
-              <Progress value={(todaySummary.caloriesConsumed / todaySummary.caloriesTarget) * 100} className="mb-2" />
-              <p className="text-sm text-muted-foreground">
-                {todaySummary.caloriesTarget - todaySummary.caloriesConsumed} calories remaining
-              </p>
+              <Progress
+                value={(todaySummary.caloriesConsumed / todaySummary.caloriesTarget) * 100}
+                className="mb-3 h-2"
+              />
+              <div className="flex items-center justify-between text-sm">
+                <p className="text-muted-foreground">
+                  {todaySummary.caloriesTarget - todaySummary.caloriesConsumed} remaining
+                </p>
+                <Badge variant="outline">
+                  {Math.round((todaySummary.caloriesConsumed / todaySummary.caloriesTarget) * 100)}%
+                </Badge>
+              </div>
             </CardContent>
           </Card>
 
-          <Card className="shadow-card">
+          <Card className="shadow-card border-2 border-accent/20 hover:border-accent hover:shadow-lg transition-all group">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-base font-medium">Goals Progress</CardTitle>
-              <Target className="h-5 w-5 text-primary" />
+              <div className="h-10 w-10 rounded-lg bg-accent/10 group-hover:bg-accent/20 flex items-center justify-center transition-colors">
+                <Target className="h-5 w-5 text-accent" />
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold mb-2">{todaySummary.goalsProgress}%</div>
-              <Progress value={todaySummary.goalsProgress} className="mb-2" />
-              <p className="text-sm text-muted-foreground">
-                {lifeGoals.length} active goals
-              </p>
+              <div className="flex items-baseline gap-2 mb-3">
+                <div className="text-3xl font-bold text-accent">{todaySummary.goalsProgress}%</div>
+                <div className="text-muted-foreground">overall</div>
+              </div>
+              <Progress value={todaySummary.goalsProgress} className="mb-3 h-2" />
+              <div className="flex items-center justify-between text-sm">
+                <p className="text-muted-foreground">
+                  {lifeGoals.length} active goals
+                </p>
+                {todaySummary.goalsProgress >= 75 && (
+                  <Badge variant="outline" className="border-success text-success">
+                    On Track!
+                  </Badge>
+                )}
+              </div>
             </CardContent>
           </Card>
         </div>
