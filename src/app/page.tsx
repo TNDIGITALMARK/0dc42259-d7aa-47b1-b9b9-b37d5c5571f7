@@ -88,8 +88,8 @@ export default function LandingPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-accent/30 to-secondary/30 rounded-3xl blur-3xl scale-90" />
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/generated/hero-lifeplan.png"
-                  alt="Plan Your Future - Achieve your goals, live the best life"
+                  src="/generated/hero-fitness-group.png"
+                  alt="Diverse group achieving fitness goals together - Transform your life with LifePlan Pro"
                   className="w-full h-auto"
                 />
               </div>
@@ -543,6 +543,70 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Success Stories with Real Photos */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Real People, Real Results
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              See how our community is transforming their lives with LifePlan Pro
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden">
+              <div className="h-64 overflow-hidden">
+                <img
+                  src="/generated/hero-fitness-group.png"
+                  alt="Fitness community working out together"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-3">Community Fitness</h3>
+                <p className="text-muted-foreground">
+                  Join a supportive community of like-minded individuals all working towards their wellness goals together.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden">
+              <div className="h-64 overflow-hidden">
+                <img
+                  src="/generated/nutrition-people.png"
+                  alt="People preparing healthy meals together"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-3">Nutrition Made Easy</h3>
+                <p className="text-muted-foreground">
+                  Discover delicious, healthy recipes and learn to prepare meals that fuel your body and delight your taste buds.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden">
+              <div className="h-64 overflow-hidden">
+                <img
+                  src="/generated/goals-achievement.png"
+                  alt="Person celebrating achievement"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-3">Achieve Your Dreams</h3>
+                <p className="text-muted-foreground">
+                  Set ambitious goals and watch yourself accomplish them with our proven tracking and motivation system.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonial Section */}
       <section id="testimonials" className="relative py-20 overflow-hidden">
         {/* Vibrant Rainbow Gradient Background */}
@@ -561,8 +625,12 @@ export default function LandingPage() {
             <Card className="shadow-2xl bg-white border-0 hover:scale-105 transition-transform">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-sm font-bold text-white shadow-lg">
-                    JD
+                  <div className="h-16 w-16 rounded-full overflow-hidden shadow-lg border-2 border-primary/20">
+                    <img
+                      src="/generated/testimonial-jane.png"
+                      alt="Jane D - Fitness Coach"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <p className="font-semibold">Jane D</p>
@@ -586,8 +654,12 @@ export default function LandingPage() {
             <Card className="shadow-2xl bg-white border-0 hover:scale-105 transition-transform">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-sm font-bold text-white shadow-lg">
-                    MK
+                  <div className="h-16 w-16 rounded-full overflow-hidden shadow-lg border-2 border-secondary/20">
+                    <img
+                      src="/generated/testimonial-mike.png"
+                      alt="Mike K - Business Professional"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <p className="font-semibold">Mike K</p>
@@ -610,8 +682,12 @@ export default function LandingPage() {
             <Card className="shadow-2xl bg-white border-0 hover:scale-105 transition-transform">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center text-sm font-bold text-white shadow-lg">
-                    SC
+                  <div className="h-16 w-16 rounded-full overflow-hidden shadow-lg border-2 border-accent/20">
+                    <img
+                      src="/generated/testimonial-sarah.png"
+                      alt="Sarah C - Wellness Enthusiast"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <p className="font-semibold">Sarah C</p>
@@ -655,27 +731,27 @@ export default function LandingPage() {
             <div>
               <h4 className="font-semibold mb-4 text-primary">About Us</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Our Story</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Team</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Press</a></li>
+                <li><Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">Our Story</Link></li>
+                <li><Link href="/team" className="text-sm text-muted-foreground hover:text-primary transition-colors">Team</Link></li>
+                <li><Link href="/press" className="text-sm text-muted-foreground hover:text-primary transition-colors">Press</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4 text-secondary">Support</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-secondary transition-colors">Help Center</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-secondary transition-colors">Contact Us</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-secondary transition-colors">Privacy Policy</a></li>
+                <li><Link href="/help" className="text-sm text-muted-foreground hover:text-secondary transition-colors">Help Center</Link></li>
+                <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-secondary transition-colors">Contact Us</Link></li>
+                <li><Link href="/privacy" className="text-sm text-muted-foreground hover:text-secondary transition-colors">Privacy Policy</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4 text-accent">Connect</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">Facebook</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">Twitter</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">Instagram</a></li>
+                <li><a href="https://facebook.com/lifeplanpro" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-accent transition-colors">Facebook</a></li>
+                <li><a href="https://twitter.com/lifeplanpro" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-accent transition-colors">Twitter</a></li>
+                <li><a href="https://instagram.com/lifeplanpro" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-accent transition-colors">Instagram</a></li>
               </ul>
             </div>
 
