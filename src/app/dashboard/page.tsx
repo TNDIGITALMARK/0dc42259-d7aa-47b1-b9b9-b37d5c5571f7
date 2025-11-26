@@ -1,6 +1,7 @@
 'use client';
 
-import { Dumbbell, Apple, Target, Calendar, TrendingUp, Award } from 'lucide-react';
+import { Dumbbell, Apple, Target, Calendar, TrendingUp, Award, BookOpen } from 'lucide-react';
+import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
@@ -106,44 +107,99 @@ export default function DashboardPage() {
           </Card>
         </div>
 
-        {/* Today's Workout */}
-        {todaysWorkout && (
-          <Card className="shadow-card mb-8">
+        {/* Today's Workouts - Homework & Gym */}
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          {/* Homework Workout */}
+          <Card className="shadow-card border-l-4 border-l-secondary">
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div>
-                  <CardTitle>Today's Workout</CardTitle>
-                  <CardDescription>{todaysWorkout.type} • {todaysWorkout.duration} minutes</CardDescription>
+                  <CardTitle className="flex items-center gap-2">
+                    <div className="h-8 w-8 rounded-lg bg-secondary/20 flex items-center justify-center">
+                      <BookOpen className="h-5 w-5 text-secondary" />
+                    </div>
+                    Homework Today
+                  </CardTitle>
+                  <CardDescription>Study sessions & assignments</CardDescription>
                 </div>
-                <Badge variant={completedWorkouts.has(todaysWorkout.id) ? 'default' : 'secondary'}>
-                  {completedWorkouts.has(todaysWorkout.id) ? 'Completed' : 'Pending'}
-                </Badge>
               </div>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                {todaysWorkout.exercises.map((exercise, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 rounded-lg bg-secondary/50">
-                    <div>
-                      <p className="font-medium">{exercise.name}</p>
-                      <p className="text-sm text-muted-foreground">
-                        {exercise.sets} sets × {exercise.reps} reps
-                        {exercise.weight && ` @ ${exercise.weight}lbs`}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-                <Button
-                  className="w-full"
-                  onClick={() => toggleWorkout(todaysWorkout.id)}
-                  variant={completedWorkouts.has(todaysWorkout.id) ? 'secondary' : 'default'}
-                >
-                  {completedWorkouts.has(todaysWorkout.id) ? 'Mark as Incomplete' : 'Complete Workout'}
-                </Button>
+              <div className="space-y-3 mb-4">
+                <div className="p-3 rounded-lg bg-secondary/10">
+                  <p className="font-medium text-sm">Math Chapter 5</p>
+                  <p className="text-xs text-muted-foreground">45 minutes • 3 tasks</p>
+                </div>
+                <div className="p-3 rounded-lg bg-secondary/10">
+                  <p className="font-medium text-sm">Reading Assignment</p>
+                  <p className="text-xs text-muted-foreground">30 minutes • 2 chapters</p>
+                </div>
               </div>
+              <Link href="/workouts?type=homework" className="block">
+                <Button className="w-full" variant="outline">
+                  View All Homework
+                </Button>
+              </Link>
             </CardContent>
           </Card>
-        )}
+
+          {/* Gym Workout */}
+          <Card className="shadow-card border-l-4 border-l-primary">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <div>
+                  <CardTitle className="flex items-center gap-2">
+                    <div className="h-8 w-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                      <Dumbbell className="h-5 w-5 text-primary" />
+                    </div>
+                    Gym Workout Today
+                  </CardTitle>
+                  <CardDescription>Upper body strength training</CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3 mb-4">
+                {todaysWorkout?.exercises.slice(0, 2).map((exercise, index) => (
+                  <div key={index} className="p-3 rounded-lg bg-primary/10">
+                    <p className="font-medium text-sm">{exercise.name}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {exercise.sets} sets × {exercise.reps} reps
+                      {exercise.weight && ` @ ${exercise.weight}lbs`}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <Link href="/workouts?type=gym" className="block">
+                <Button className="w-full bg-gradient-to-r from-primary to-accent">
+                  Start Workout
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Quick Access to Full Workout Tracker */}
+        <Card className="shadow-card mb-8 border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5">
+          <CardContent className="p-6">
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-4">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                  <Dumbbell className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Track All Your Workouts</h3>
+                  <p className="text-sm text-muted-foreground">Homework, gym, and everything in between</p>
+                </div>
+              </div>
+              <Link href="/workouts">
+                <Button size="lg" className="bg-gradient-to-r from-primary to-accent">
+                  Open Workouts
+                </Button>
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Today's Meals */}
         <Card className="shadow-card mb-8">
